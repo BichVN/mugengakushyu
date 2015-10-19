@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :user_logs
+  resources :user_logs
+  resources :user_logs
+  root 'static_pages#home'
+
   devise_for :users
   resources :books
   # The priority is based upon order of creation: first created -> highest priority.

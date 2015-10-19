@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% if user_signed_in? %>
+<h3> Hello <%= current_user.email %>!</h3>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<% else %>
+<%= link_to "サインイン", destroy_user_session_path, method: :delete %>
+<%= link_to "ユーサー登録", destroy_user_session_path, method: :delete %>
+<% end %>
 <%= yield %>
-
 </body>
 </html>
